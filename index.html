@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Scan Viewer</title>
-    <!-- Include Papaya CSS & JS from CDN -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/papaya/1.4.0/papaya.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/papaya/1.4.0/papaya.js"></script>
+    
+    <!-- Load local stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./papaya.css" />
+    
     <style>
         body {
             margin: 0;
@@ -18,7 +19,6 @@
             align-items: center;
             height: 100vh;
         }
-        /* Papaya Viewer Container Styling */
         .papaya {
             width: 100%;
             height: 100%;
@@ -27,13 +27,16 @@
 </head>
 <body>
 
-    <!-- Papaya Viewer Element -->
+    <!-- Papaya Viewer Container -->
     <div class="papaya" data-params="params"></div>
 
+    <!-- Load local JavaScript -->
+    <script type="text/javascript" src="./papaya.js"></script>
+
     <script type="text/javascript">
-        // Configure Papaya to load your .nrrd file from the same GitHub repository
+        // Configure Papaya to load your NIfTI file relative to the webpage
         var params = [];
-        params["images"] = ["output_image.nrrd"]; 
+        params["images"] = ["./output_image.nii.gz"]; 
     </script>
 
 </body>
